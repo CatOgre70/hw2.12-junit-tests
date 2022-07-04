@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static sky.pro.hw2_12junittests.service.Constants.*;
 
 public class CalcServiceImplTest {
 
     private int num1_1, num1_2, num2_1, num2_2;
-    final int numZero = 0;
     CalcService calsService = new CalcServiceImpl();
 
     @BeforeEach
     public void testInitialization(){
-        num1_1 = 5;
-        num1_2 = 7;
-        num2_1 = 47;
-        num2_2 = -3;
+        num1_1 = FIVE;
+        num1_2 = SEVEN;
+        num2_1 = FORTY;
+        num2_2 = EIGHT;
     }
 
 
@@ -75,7 +75,7 @@ public class CalcServiceImplTest {
 
     @Test
     public void testGetDivideByZero(){
-        assertThrows(IllegalArgumentException.class, () -> this.calsService.getDivide(num2_1, numZero));
+        assertThrows(IllegalArgumentException.class, () -> this.calsService.getDivide(num2_1, ZERO));
     }
 
 }
