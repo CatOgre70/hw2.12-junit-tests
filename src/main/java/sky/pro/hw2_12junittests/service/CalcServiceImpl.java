@@ -22,8 +22,8 @@ public class CalcServiceImpl implements CalcService {
     @Override
     public String getDivide(int num1, int num2){
         if(num2 == 0)
-            return num1 + " / " + num2 + " = " + "Ой! Я поделила на ноль и улетаю в другую Вселенную! " +
-                    "Прощай, человечество!";
+            throw new IllegalArgumentException("Ой! Я поделила на ноль и улетаю в другую Вселенную! " +
+                    "Прощай, человечество!");
 
         return num1 + " / " + num2 + " = " + ((double) num1 / num2);
     }
